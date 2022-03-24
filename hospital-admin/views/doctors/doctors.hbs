@@ -1,0 +1,127 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card__body--title">
+            <h5 class="card-title">{{title}}</h5>
+            <button type="button" class="btn btn-outline-success m-b-xs" data-bs-toggle="modal"
+                data-bs-target="#exampleModalCenter"><i data-feather="plus"></i></button>
+        </div>
+        </button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th>Rasmi</th>
+                    <th scope="col">Shifokor ismi</th>
+                    <th scope="col">Bo'limi</th>
+                    <th scope="col">Sana</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each doctors}}
+                <tr>
+                    <td scope="row">{{@index}}</td>
+                    <td><img src={{img}}></td>
+                    <td>{{ism}}</td>
+                    <td>{{bolim.bolim}}</td>
+                    <td>Sana</td>
+                    <td>
+                        <button type="button" onclick="edit('{{_id}}')" class="btn btn-outline-secondary m-b-xs"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        ><i
+                                data-feather="edit-3"></i></button>
+                        <a href="/doctors/delete/{{_id}}">
+                            <button type="button" class="btn btn-outline-danger m-b-xs"><i
+                                    data-feather="trash"></i></button>
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Yangi shifokor qo'shish</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="card p-3">
+                <form action="/doctors?_csrf={{csrf}}" method="post" enctype="multipart/form-data">
+                    <div class="form-floating">
+                        <input type="text" name="ism" class="form-control" id="floatingPassword"
+                            placeholder="Shifokor ismi">
+                        <label for="floatingPassword">Shifokor ismi</label>
+                        <select class="form-select my-3" name="bolim" aria-label="Default select example">
+                            <option value="">Bo'limi</option>
+                            {{#each category}}
+                            <option value="{{_id}}">{{bolim}}</option>
+                            {{/each}}
+                        </select>
+                        <div class="my-3">
+                            <label for="formFile" class="form-label">Shifokor rasmi</label>
+                            <input class="form-control" type="file" name="img" id="formFile">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Qo'shish</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Shifokor malumotini o'zgartirish</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="card p-3">
+                <form action="/doctors/edit?_csrf={{csrf}}" method="post" name="editform">
+                    <div class="form-floating">
+                        <input type="hidden" name="_id">
+                        <input type="text" name="ism" class="form-control" id="floatingPassword"
+                            placeholder="Shifokor ismi">
+                        <label for="floatingPassword">Shifokor ismi</label>
+                        <select class="form-select my-3" name="bolim" aria-label="Default select example">
+                            <option value="">Bo'limi</option>
+                            {{#each category}}
+                            <option value="{{_id}}">{{bolim}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Saqlsh</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let form = document.forms.editform
+    const edit = (_id) => {
+        fetch(`/doctors/${_id}`)
+        .then(res => res.json())
+        .then(doctors => {
+            form.bolim.value = doctors.bolim
+            form.ism.value = doctors.ism
+            form._id.value = doctors._id
+        })
+    }
+</script>

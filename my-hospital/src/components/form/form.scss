@@ -1,0 +1,48 @@
+@import '../../public/css/var.scss';
+
+form {
+    flex-basis: 50%;
+    border-radius: 5px;
+    background-color: $dark-blue;
+    overflow: hidden;
+    z-index: 1;
+    select,
+    input {
+        color: #fff;
+        outline: none;
+        width: 50%;
+        background: unset;
+        border: none;
+        border-bottom: 1px solid $light;
+        padding: 15px 20px;
+        color: $light;
+        &::placeholder {
+            color: $light;
+        }
+        &:nth-child(even) {
+            border-left: 1px solid $light;
+        }
+    }
+    textarea {
+        width: 100%;
+        flex-basis: 100%;
+        color: #fff;
+        background-color: $dark-blue;
+        padding-top: 16px;
+        padding-left: 20px;
+        outline: none;
+        border: none;
+        resize: none;
+        &::-webkit-input-placeholder {
+            color: $light;
+        }
+    }
+    button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        background-color: $light;
+        color: $dark-blue;
+        cursor: pointer;
+    }
+}

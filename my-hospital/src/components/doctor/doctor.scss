@@ -1,0 +1,38 @@
+@import '../../public/css/var.scss';
+
+
+.doctor {
+    font-family: 'Work sans';
+    background-color: $light;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    &__name {
+        margin-top: 24px;
+        color: $dark-blue;
+        font-size: 18px;
+    }
+    &__category {
+        margin-top: 8px;
+        font-weight: bold;
+        font-size: 18px;
+        color: $dark-blue;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+    &__icon {
+        margin-top: 16px;
+        a {
+            padding: 0px 10px;
+        }
+    }
+    button {
+        width: 100%;
+        border: none;
+        background-color: $dark-blue;
+        padding: 12px;
+        color: $light-blue;
+        cursor: pointer;
+        margin-top: 24px;
+    }
+}

@@ -1,0 +1,66 @@
+@import '../../public/css/var.scss';
+
+.checkup {
+    margin: 64px 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: $light;
+    overflow: hidden;
+    transition: .3s;
+    &__img {
+        width: 100%;
+        height: 300px;
+        background-image: url('../../public/img/checkup.png');
+        position: relative;
+        &:hover {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $dark-blue;
+                opacity: 0.8;
+            }
+        }
+        &--plast {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $dark-blue;
+            bottom: -40px;
+            right: 20px;
+        }
+        &:hover {
+            .checkup__img--plast {
+                background: unset;
+                z-index: 10;
+                position: unset;
+            }
+        }
+    }
+    &__title {
+        padding: 0px 20px;
+        margin-top: 56px;
+        color: $dark-blue;
+        font-weight: 500;
+        font-size: 26px;  
+        margin-bottom: 8px;  
+    }
+    &__text {
+        padding: 0px 20px;
+    }
+    button {
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+}

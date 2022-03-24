@@ -1,0 +1,67 @@
+@import '../../public/css/var.scss';
+
+.footer {
+    margin-top: 64px;
+    padding-top: 70px;
+    background-color: $dark-blue;
+    color: #fff;
+}
+
+.footer--top {
+    padding-bottom: 47px;
+    border-bottom: 1px solid #BFD2F8;
+}
+
+.footer__box {
+    img {
+        margin-bottom: 18px;
+    }
+    .footer__title {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 39px;
+    }
+    ul li a {
+        white-space: nowrap;
+        display: inline-block;
+        color: #fff;    
+        margin-bottom: 7px;
+    }
+    .form {
+        display: flex;
+        align-items: center;
+        background-color: $light;
+        border-radius: 5px;
+        padding: 14px 10px;
+        input {
+            border: none;
+            outline: none;
+            background: unset;
+            &::-webkit-input-placeholder {
+                color: $dark-blue;
+            }
+        }
+        button {
+            background: unset;
+            border: none;
+            cursor: pointer;
+            margin-left: 25px;
+            img {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.footer--bottom {
+    display: flex;
+    align-items: center;
+    padding-top: 44px;
+    padding-bottom: 73px;
+    .footer__icon {
+        margin-left: auto;
+        img {
+            margin-left: 20px;
+        }
+    }
+}

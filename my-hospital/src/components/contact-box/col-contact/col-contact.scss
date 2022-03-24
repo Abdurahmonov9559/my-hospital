@@ -1,0 +1,29 @@
+@import '../../../public/css/var.scss';
+
+.contact{
+    &Box {
+        padding: 50px 26px;
+        background-color: $light;
+        border-radius: 5px;
+        margin-top: 64px;
+        img {
+            margin-bottom: 15px;
+        }
+        .Box--title {
+            font-weight: 700;
+            font-size: 18px;
+            color: $dark-blue;
+            margin-bottom: 8px;
+        }
+        .Box--text {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: $dark-blue;
+            white-space: nowrap;
+            span {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

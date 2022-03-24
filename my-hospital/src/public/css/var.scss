@@ -1,0 +1,10 @@
+$black: #212124;
+$dark-blue: #1F2B6C;
+$light-blue: #159EEC;
+$light: #BFD2F8;
+
+@mixin fb($w) {
+    flex-basis: $w;
+    width: $w;
+    max-width: $w;
+}

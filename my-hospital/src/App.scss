@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&family=Yeseva+One&display=swap');
+
+@import './public/css/var.scss';
+
+body {
+  // font-family: 'Yeseva One', cursive;
+  font-family: 'Work Sans', sans-serif;
+  color: $black;
+}
+
+
+
+.btn {
+  border: 0;
+  background: #BFD2F8;
+  border-radius: 50px; 
+  color: #1F2B6C;
+  padding: 13px 35px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 992px;
+  margin: auto;
+}
+
+.stitle {
+  color: $light-blue;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.btitle {
+  color: $dark-blue;
+  font-family: Yeseva One;
+  font-size: 48px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.col-4 {
+  @include fb(33.33%);
+  padding: 0px 10px;
+}
+
+.col-3 {
+  @include fb(25%);
+  padding: 0px 10px;
+}
+
+.col-6 {
+  @include fb(50%);
+  padding: 0px 10px;
+}
+.col-2 {
+  @include fb(16.66%);
+  padding: 0px 10px;
+}
+
+.dark-blue {
+  background-color: $dark-blue;
+}
+.light-blue {
+  background-color: $light-blue;
+}
+.light {
+  background-color: $light;
+}
+
+.btn__arrow {
+  display: block;
+  margin: auto;
+  border: 0;
+  background: unset;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: $light-blue;
+  img {
+    margin-left: 10px;
+  }
+}
+
+.pages {
+  color: $dark-blue;
+  font-size: 18px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.px-15 {
+  padding: 0px 15px;
+}
+
+.rec-carousel-item-visible {
+  padding: 0px 15px;
+}

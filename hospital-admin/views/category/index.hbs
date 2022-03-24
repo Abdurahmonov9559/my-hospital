@@ -1,0 +1,83 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card__body--title">
+            <h5 class="card-title">{{title}}</h5>
+            <button type="button" class="btn btn-outline-success m-b-xs" 
+                onclick="show()"
+            ><i data-feather="plus"></i></button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Bo'lim nomi</th>
+                    <th scope="col">Sana</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each category}}
+                <tr>
+                    <td scope="row">{{@index}}</td>
+                    <td>{{bolim}}</td>
+                    <td>{{date}}</td>
+                    <td>
+                        <button type="button" onclick="edit('{{_id}}')" class="btn btn-outline-secondary m-b-xs"><i data-feather="edit-3"></i></button>
+                        <a href="/category/delete/{{_id}}">
+                            <button type="button" class="btn btn-outline-danger m-b-xs"><i data-feather="trash"></i></button>
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="category">
+    <div class="category__form">
+        <div class="card__body--title">
+            <div class="card--title">Yangi bo'lim qo'shish</div>
+            <button type="button" onclick="show()" class="btn btn-outline-danger m-b-xs"><i data-feather="x"></i></button>
+        </div>
+        <form action="/category/" method="post">
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <input type="text" class="form-control" name="bolim" placeholder="Bo'lim nomi">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal1">
+    <div class="category__form">
+        <div class="card__body--title">
+            <div class="card--title">Bo'limni o'zgartirish</div>
+        </div>
+        <form action="/category/edit" method="post" name="editform">
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <input type="hidden" name="_id">
+            <input type="text" class="form-control" name="bolim" placeholder="Bo'lim nomi">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    let category = document.querySelector('.category')
+    function show(){
+        category.classList.toggle('d-block')
+    }
+
+    let modal1 = document.querySelector('.modal1')
+    let form = document.forms.editform
+    const edit = (_id) => {
+        modal1.classList.toggle('d-block')
+        fetch(`/category/${_id}`)
+        .then(res => res.json())
+        .then(category => {
+            form.bolim.value = category.bolim
+            form._id.value = category._id
+        })
+    }
+</script>

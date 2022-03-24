@@ -1,0 +1,22 @@
+.header__welcome {
+    width: 658px;
+    margin: auto;
+    text-align: center;
+    .stitle {
+        margin-top: 64px;
+        margin-bottom: 8px;
+    }
+    .btitle {
+        margin-bottom: 15px;
+    }
+    .text {
+        margin-bottom: 30px;
+    }
+}
+
+.welcome-bg {
+    height: 250px;
+    background-image: url('../../../public/img/welcome-bg.png');
+    margin-top: 61px;
+    margin-bottom: 64px;
+}

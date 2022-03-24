@@ -1,0 +1,29 @@
+<div class="page-sidebar">
+    <ul class="list-unstyled accordion-menu">
+        <li class="sidebar-title">
+            Bosh qism
+        </li>
+        <li {{#if isHome}}class="active-page"{{/if}}>
+            <a href="/"><i data-feather="home"></i>Bosh sahifa</a>
+        </li>
+        <li {{#if isCategory}}class="active-page"{{/if}}>
+            <a href="/category"><i data-feather="grid"></i>Bo'limlar</a>
+        </li>
+        <li {{#if isDoctors}}class="active-page"{{/if}}>
+            <a href="/doctors"><i data-feather="list"></i>Shifokorlar</a>
+        </li>
+        <li {{#if isService}}class="active-page"{{/if}}>
+            <a href="/service"><i data-feather="calendar"></i>Xizmatlar</a>
+        </li>
+        <li {{#if isProjects}}class="active-page"{{/if}}>
+            <a href="/projects"><i data-feather="briefcase"></i>Loyihalar</a>
+        </li>
+        <li {{#if isFaq}}class="active-page"{{/if}}>
+            <a href="/faq"><i data-feather="message-circle"></i>Savol-javob</a>
+        </li>
+        <li {{#if isSettings}}class="active-page"{{/if}}>
+            <a href="/settings"><i data-feather="settings"></i>Sozlamalar</a>
+        </li>
+        
+    </ul>
+</div>

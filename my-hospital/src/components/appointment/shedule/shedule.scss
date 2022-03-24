@@ -1,0 +1,55 @@
+@import '../../../public/css/var.scss';
+
+
+.shedule {
+    // flex-basis: 50%;
+    margin-left: 20px;
+    background-color: $dark-blue;
+    color: #fff;
+    padding: 50px;
+    border-radius: 5px; 
+    &__title {
+        color: $light;
+        font-size: 48px;
+        margin-bottom: 51px;
+    }
+    &__date {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 32px;
+        ul {
+            width: 100%;
+            li {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 25px;
+                align-items: center;
+                .line {
+                    width: 20px;
+                    height: 2px;
+                    background-color: $light;
+                }
+            }
+        }
+    }
+    &__call {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 32px;
+        border-top:2px solid #BFD2F8;
+        img {
+            margin-left: 8px;
+        }
+        &--contact {
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
+            font-size: 26px;
+            span {
+                color: $light;
+            }
+        }
+    }
+}

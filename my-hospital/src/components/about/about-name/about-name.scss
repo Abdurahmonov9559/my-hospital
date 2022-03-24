@@ -1,0 +1,44 @@
+@import '../../../public/css/var.scss';
+
+.aboutName {
+    margin: 64px 0;
+    .container {
+        display: flex;
+        img {
+            margin-right: 20px;
+        }
+        .stitle,
+        .btitle {
+            text-align: unset;
+        }
+        .btitle {
+            margin-bottom: 24px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                flex-basis: 50%;
+                font-size: 18px;
+                margin-bottom: 16px;
+                display: flex;
+                align-items: center;
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background-color: $light-blue;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .aboutName--text {
+            margin-top: 32px;
+            p {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

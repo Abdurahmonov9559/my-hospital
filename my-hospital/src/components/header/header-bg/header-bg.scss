@@ -1,0 +1,22 @@
+
+.header__bg {
+    height: 550px;
+    background-image: url('../../../public/img/home-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        .stitle {
+            margin-bottom: 8px;
+            margin-top: 167px;
+        }
+        .btitle {
+            width: 55%;
+            margin-bottom: 32px;
+            text-align: unset;
+        }
+    }
+}
